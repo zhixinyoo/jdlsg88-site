@@ -1,5 +1,5 @@
 {
-  "phase": "build_complete",
+  "phase": "deployed_staging",
   "brand_name": "JDL688 Singapore",
   "domain": "jdlsg88.com",
   "cta": "https://shortslink.org/jdl-signup-sg",
@@ -18,5 +18,12 @@
     "build_errors": 0,
     "verified_at": "2026-09-03",
     "blog_categories": 3
+  },
+  "deploy": {
+    "github_repo": "https://github.com/zhixinyoo/jdlsg88-site",
+    "cloudflare_pages_project": "jdlsg88-site",
+    "staging_url": "https://jdlsg88-site.pages.dev",
+    "custom_domain_attached": false,
+    "deployed_at": "2026-09-03"
   }
 }
