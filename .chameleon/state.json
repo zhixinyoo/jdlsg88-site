@@ -1,0 +1,22 @@
+{
+  "phase": "build_complete",
+  "brand_name": "JDL688 Singapore",
+  "domain": "jdlsg88.com",
+  "cta": "https://shortslink.org/jdl-signup-sg",
+  "reference_url": "https://jdlsg88.com",
+  "project_dir": "/Users/zhixin/Projects/jdlsg88",
+  "compliance": {
+    "copyrightLine": true,
+    "licenceText": true
+  },
+  "build": {
+    "framework": "astro",
+    "output": "static",
+    "pages_built": 21,
+    "blog_posts": 8,
+    "categories": 4,
+    "build_errors": 0,
+    "verified_at": "2026-09-03",
+    "blog_categories": 3
+  }
+}

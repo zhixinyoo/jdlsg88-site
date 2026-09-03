@@ -1,0 +1,105 @@
+{
+  "scraped_at": "2026-09-03T00:00:00Z",
+  "reference_url": "https://jdlsg88.com",
+  "brand_name": "JDL688 Singapore",
+  "domain": "jdlsg88.com",
+  "cta_link": "https://shortslink.org/jdl-signup-sg",
+  "colors": {
+    "bg": "#111111",
+    "bg2": "#1a1a2e",
+    "primary": "#09174E",
+    "accent": "#F5D043",
+    "text": "#FFFFFF",
+    "textAccent": "#F5D043",
+    "font": "Manrope",
+    "radius": "5px"
+  },
+  "assets": {
+    "logo": { "url": "https://imagedelivery.net/P9OFiVM18PAr1SvRwzgU7w/3073d605-95da-414a-13dc-44ae8dd2e600/public", "local_path": "public/assets/shared/logo.png" },
+    "favicon": { "url": "https://jdlsg88.com/wp-content/uploads/2025/10/cropped-favicon-32x32.png", "local_path": "public/assets/shared/favicon.png" },
+    "androidIcon": { "url": "https://imagedelivery.net/P9OFiVM18PAr1SvRwzgU7w/cf6df90b-434c-4b34-fd39-a0799a5f5800/public", "local_path": "public/assets/shared/android-icon.png" },
+    "appleIcon": { "url": "https://imagedelivery.net/P9OFiVM18PAr1SvRwzgU7w/41d7e56a-13a3-4958-d31e-06f484a64700/public", "local_path": "public/assets/shared/apple-icon.png" },
+    "fbIcon": { "local_path": "public/assets/shared/fb-icon.png", "source": "skill bundled generic asset" },
+    "telegramIcon": { "local_path": "public/assets/shared/telegram-icon.png", "source": "skill bundled generic asset" },
+    "licenceBadge": { "local_path": "public/assets/shared/gaming-curacao.png", "source": "skill bundled generic asset" },
+    "certifications": { "local_path": "public/assets/shared/provider-certifications.png", "source": "skill bundled generic asset" },
+    "badge18Plus": { "local_path": "public/assets/shared/18plus.png", "source": "skill bundled generic asset" },
+    "banners": [
+      { "url": "https://imagedelivery.net/P9OFiVM18PAr1SvRwzgU7w/d99e5ca4-5447-4399-d0dc-458e46544e00/public", "local_path": "public/assets/homepage/banner-1.png", "alt": "JDL688 Singapore Banner Slot games for everyone online" }
+    ],
+    "apps": [
+      { "name": "Pussy888", "local_path": "public/assets/homepage/app-pussy888.png" },
+      { "name": "Gameplay", "local_path": "public/assets/homepage/app-gameplay.png" },
+      { "name": "Playtech Live Casino", "local_path": "public/assets/homepage/app-playtech-live.png" },
+      { "name": "Mega888", "local_path": "public/assets/homepage/app-mega888.png" },
+      { "name": "Xpro Gaming Live Casino", "local_path": "public/assets/homepage/app-xpro-gaming.png" },
+      { "name": "Dream Gaming Live Casino", "local_path": "public/assets/homepage/app-dream-gaming.png" },
+      { "name": "918Kiss", "local_path": "public/assets/homepage/app-918kiss.png" },
+      { "name": "Joker", "local_path": "public/assets/homepage/app-joker.png" }
+    ],
+    "blogImages": [
+      { "local_path": "public/assets/blog/blog-1.jpg", "title": "Winbox MY Review" },
+      { "local_path": "public/assets/blog/blog-2.jpg", "title": "Roulette" },
+      { "local_path": "public/assets/blog/blog-3.png", "title": "Baccarat" },
+      { "local_path": "public/assets/blog/blog-4.png", "title": "Poker" },
+      { "local_path": "public/assets/blog/blog-5.png", "title": "Sic Bo" }
+    ]
+  },
+  "tabs": [
+    { "label": "Arcade & Table", "id": "cat-1" },
+    { "label": "Fishing", "id": "cat-2" },
+    { "label": "Bingo & Arcade", "id": "cat-3" }
+  ],
+  "gameCards": {
+    "cat-1": [
+      { "local_path": "public/assets/homepage/game-cat1-1.png", "label": "Justice Bao" },
+      { "local_path": "public/assets/homepage/game-cat1-2.png", "label": "Monkey King" },
+      { "local_path": "public/assets/homepage/game-cat1-3.png", "label": "Sic Bo" },
+      { "local_path": "public/assets/homepage/game-cat1-4.png", "label": "Dreams of American" },
+      { "local_path": "public/assets/homepage/game-cat1-5.png", "label": "Great Blue" },
+      { "local_path": "public/assets/homepage/game-cat1-6.png", "label": "Roulette 36 Synchronize" }
+    ],
+    "cat-2": [
+      { "local_path": "public/assets/homepage/game-cat2-1.png", "label": "All-Star" },
+      { "local_path": "public/assets/homepage/game-cat2-2.png", "label": "Happy Fishing" },
+      { "local_path": "public/assets/homepage/game-cat2-3.png", "label": "Ocean King Jackpot" },
+      { "local_path": "public/assets/homepage/game-cat2-4.png", "label": "Boom Legend" },
+      { "local_path": "public/assets/homepage/game-cat2-5.png", "label": "Dragon Fortune" },
+      { "local_path": "public/assets/homepage/game-cat2-6.png", "label": "Fortune King Jackpot" },
+      { "local_path": "public/assets/homepage/game-cat2-7.png", "label": "Mega Fishing" },
+      { "local_path": "public/assets/homepage/game-cat2-8.png", "label": "Dinosaur Tycoon" },
+      { "local_path": "public/assets/homepage/game-cat2-9.png", "label": "Jackpot" },
+      { "local_path": "public/assets/homepage/game-cat2-10.png", "label": "Bombing Fishing" },
+      { "local_path": "public/assets/homepage/game-cat2-11.png", "label": "Bingo" },
+      { "local_path": "public/assets/homepage/game-cat2-12.png", "label": "JILI" }
+    ],
+    "cat-3": [
+      { "local_path": "public/assets/homepage/game-cat3-1.png", "label": "Journey West" },
+      { "local_path": "public/assets/homepage/game-cat3-2.png", "label": "Jogo do Bicho" },
+      { "local_path": "public/assets/homepage/game-cat3-3.png", "label": "Elf Bingo" },
+      { "local_path": "public/assets/homepage/game-cat3-4.png", "label": "Jackpot Bingo" }
+    ]
+  },
+  "promoData": [
+    { "title": "Welcome Bonus", "description": "100% up to SGD 388, min deposit SGD 10", "wagering": "15x", "badge": "HOT" },
+    { "title": "Free Credit", "description": "SGD 10-20 free for new members on first deposit", "wagering": "20x", "badge": "NEW" },
+    { "title": "Daily Rebate", "description": "Up to 1% cashback daily, win or lose, no minimum", "wagering": "1x", "badge": "" },
+    { "title": "VIP Cashback", "description": "Up to 10% weekly cashback across Silver/Gold/Platinum/Diamond tiers", "wagering": "1x", "badge": "VIP" },
+    { "title": "Referral Bonus", "description": "SGD 50 per friend referred", "wagering": "5x", "badge": "" }
+  ],
+  "trustSignals": {
+    "atAGlance": {
+      "platform": "Online Casino and Sportsbook",
+      "games": "500+ slots, live dealer, fishing, table games",
+      "welcomeBonus": "100% up to SGD 388",
+      "minDeposit": "SGD 10",
+      "payoutSpeed": "2-24 hours",
+      "mobile": "Android APK + iOS + Browser",
+      "payments": "Touch n Go, GrabPay, DuitNow, Crypto",
+      "support": "24/7 Live Chat"
+    },
+    "providers": ["Pragmatic Play", "JILI", "Spadegaming", "CQ9", "Evolution Gaming", "Asia Gaming", "Ezugi"]
+  },
+  "txTable": { "phonePrefix": "65", "amountPrefix": "SGD", "games": ["JILI", "PRAGMATIC PLAY", "SPADEGAMING", "CQ9", "EVOLUTION", "ASIA GAMING"] },
+  "notes": "This is the brand's OWN current WordPress site (jdlsg88.com), being replaced -- not a competitor. reference_url scraped for brand continuity (colors/logo/CTA/copy), not competitive research. The site's '/blog/' page is an outbound link farm to unrelated third-party casino domains, not real editorial content -- not reproduced in the rebuild. No in-page game tab switcher was found on the live site; the 3 categories above were inferred from image alt-text groupings (Sky3888 arcade/table vs JILI fishing vs JILI bingo/arcade) since FireCrawl keyless+interact was not available to click through a tabbed UI if one exists. No distinct staticBanner/referBg/promo1/promo2 images were found on the scraped site (it only had one hero banner) -- reuse public/assets/homepage/banner-1.png for staticBanner, and design promo1/promo2/referBg as CSS-only panels (accent-bordered box with headline text + CTA button) rather than leaving broken image references."
+}

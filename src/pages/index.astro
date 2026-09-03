@@ -1,0 +1,517 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PromoPanel from '../components/PromoPanel.astro';
+import { siteConfig } from '../config/site';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": `How do I register at ${siteConfig.brand}?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Click the REGISTER button on ${siteConfig.brand} and complete the sign-up form in under 2 minutes.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `Is ${siteConfig.brand} safe and legal to play?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Yes. ${siteConfig.brand} operates under a Curacao eGaming licence. All transactions are SSL-encrypted and player funds are protected.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `What games are available at ${siteConfig.brand}?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `${siteConfig.brand} offers Arcade & Table games, Fishing games, and Bingo & Arcade titles from providers including Pragmatic Play, JILI, Spadegaming, CQ9, Evolution Gaming and Asia Gaming.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `How do I deposit at ${siteConfig.brand}?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Click the DEPOSIT button and choose from Touch 'n Go, GrabPay, DuitNow, or crypto. Deposits are credited within minutes.`
+      }
+    },
+    {
+      "@type": "Question",
+      "name": `How fast are withdrawals at ${siteConfig.brand}?`,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `Most withdrawals at ${siteConfig.brand} are processed within 2-24 hours, 24 hours a day.`
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title={`Home - ${siteConfig.brand}`}
+  description={siteConfig.seo.description}
+  schema={faqSchema}
+>
+  <div id="content">
+    <div class="body-grid">
+
+      <!-- ===== LEFT COLUMN ===== -->
+      <div class="col-1">
+        <div id="bannerSlider"></div>
+
+        <a href={siteConfig.cta} target="_blank" rel="noopener" class="static-banner-link">
+          <img src={siteConfig.images.staticBanner} alt={siteConfig.brand} class="static-banner" />
+        </a>
+
+        <div id="txTableWrap"></div>
+
+        <div class="panel-spacer">
+          <PromoPanel kind="promo1" />
+        </div>
+
+        <div class="referral-section">
+          <h3 class="referral-heading">Refer &amp; Earn</h3>
+          <div class="referral-grid">
+            <a href={siteConfig.cta} target="_blank" rel="noopener" class="cta-btn cta-btn-share">📤 Share</a>
+            <a href={siteConfig.cta} target="_blank" rel="noopener" class="cta-btn cta-btn-downline">👥 Downline</a>
+            <button type="button" class="cta-btn cta-btn-copy" id="copyReferralBtn">🔗 Copy Referral Link</button>
+            <a href={siteConfig.cta} target="_blank" rel="noopener" class="cta-btn cta-btn-info">ℹ️ More Info</a>
+          </div>
+        </div>
+
+        <div class="panel-spacer">
+          <PromoPanel kind="promo2" />
+        </div>
+      </div>
+
+      <!-- ===== MIDDLE COLUMN ===== -->
+      <div class="col-2">
+        <div id="gameSection"></div>
+
+        <section class="app-download-section">
+          <h2 class="section-heading">Download Our Games</h2>
+          <p class="section-sub">Play your favourite sub-platforms directly — every app link leads to the same fast registration.</p>
+          <div class="app-grid">
+            {siteConfig.images.apps.map(app => (
+              <div class="app-card">
+                <img src={app.src} alt={app.name} loading="lazy" onerror="this.closest('.app-card')?.remove()" />
+                <p class="app-name">{app.name}</p>
+                <div class="app-btns">
+                  <a href={siteConfig.cta} target="_blank" rel="noopener" class="app-btn">🤖 Android</a>
+                  <a href={siteConfig.cta} target="_blank" rel="noopener" class="app-btn">🍎 iOS</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="licence-section">
+          {siteConfig.compliance.licenceText && (
+            <p class="licence-label">Licensed &amp; Regulated Gaming Platform</p>
+          )}
+          <div class="licence-badge-wrap">
+            <img src={siteConfig.images.licenceBadge} alt="Gaming Curacao Licence" class="licence-badge" />
+          </div>
+        </section>
+
+        <section class="cert-section">
+          <p class="licence-label">Certified Game Providers</p>
+          <div class="cert-grid">
+            {siteConfig.images.certLogos.map((c) => (
+              <img src={c.src} alt={c.name} class="cert-logo" loading="lazy" />
+            ))}
+          </div>
+        </section>
+
+        <section class="follow-section">
+          <p class="licence-label">Follow Us</p>
+          <div class="follow-icons">
+            <a href={siteConfig.cta} target="_blank" rel="noopener"><img src={siteConfig.images.fbIcon} alt="Facebook" /></a>
+            <a href={siteConfig.cta} target="_blank" rel="noopener"><img src={siteConfig.images.telegramIcon} alt="Telegram" /></a>
+          </div>
+        </section>
+
+        <div class="seo-article">
+          <h1>Welcome to JDL688 Singapore — Your Trusted Online Casino Singapore Destination</h1>
+          <p>
+            <a href="/">JDL688 Singapore</a> has built its reputation as a genuinely dependable
+            <a href="/">online casino Singapore</a> players return to, week after week, rather than a
+            one-time sign-up bonus chaser. From Arcade &amp; Table classics to a deep Fishing game
+            catalogue, the platform is designed around variety, transparent bonus terms, and payout
+            speed that Singapore players can actually verify for themselves.
+          </p>
+
+          <h3>Why Choose JDL688 Singapore?</h3>
+          <ul>
+            <li><strong>Instant SGD deposits</strong> via Touch 'n Go, GrabPay, DuitNow, or crypto — no waiting on manual bank transfers.</li>
+            <li><strong>24/7 live chat support</strong>, staffed around the clock, not just during business hours.</li>
+            <li><strong>Mobile-first design</strong> with a dedicated Android app and an iOS-optimised browser experience.</li>
+            <li><strong>Generous, ongoing <a href="/promotion">promotions</a></strong> — a 100% welcome match, daily rebate, and tiered VIP cashback, not just a single sign-up offer.</li>
+            <li><strong>Wide game selection</strong> spanning three distinct lobby categories and eight sub-platform apps.</li>
+          </ul>
+
+          <h3>Game Selection at JDL688 Singapore</h3>
+          <p>
+            The lobby is organised into Arcade &amp; Table, Fishing, and Bingo &amp; Arcade tabs, pulling
+            titles from Pragmatic Play, JILI, Spadegaming, CQ9, Evolution Gaming, Asia Gaming and Ezugi.
+            Players searching for the best online casino Singapore option often compare provider variety
+            first — JDL688 Singapore's spread across seven providers means no single studio's catalogue
+            dominates the experience.
+          </p>
+
+          <h3>Trusted &amp; Secure Gaming Platform</h3>
+          <p>
+            JDL688 Singapore operates under a Curacao eGaming licence, with SSL encryption applied across
+            every transaction on the platform. Responsible gaming tools and an 18+ access policy are
+            enforced throughout, and JDL688 login credentials are never shared with third-party sub-platforms.
+          </p>
+
+          <h3>Banking — Deposits &amp; Withdrawals</h3>
+          <p>
+            Deposits through Touch 'n Go, GrabPay and DuitNow typically reflect within minutes, while
+            crypto remains available for players who prefer to keep transactions off traditional banking
+            rails. JDL688 withdrawal requests are processed within 2 to 24 hours, with faster turnaround
+            common during off-peak hours.
+          </p>
+
+          <h3>How to Get Started at JDL688 Singapore</h3>
+          <ol>
+            <li><strong>Register</strong> — Tap REGISTER and complete the sign-up form with your phone number and a username in under two minutes.</li>
+            <li><strong>Deposit</strong> — Fund your account with a minimum SGD 10 deposit to unlock the 100% welcome bonus.</li>
+            <li><strong>Play &amp; Win</strong> — Explore Arcade &amp; Table, Fishing, or Bingo &amp; Arcade, and start clearing wagering with daily rebate credit on the side.</li>
+          </ol>
+
+          <h3>Frequently Asked Questions</h3>
+          <details><summary>How do I register at JDL688 Singapore?</summary><p>Click the REGISTER button on JDL688 Singapore and complete the sign-up form in under 2 minutes.</p></details>
+          <details><summary>Is JDL688 Singapore safe and legal to play?</summary><p>Yes. JDL688 Singapore operates under a Curacao eGaming licence. All transactions are SSL-encrypted and player funds are protected.</p></details>
+          <details><summary>What games are available at JDL688 Singapore?</summary><p>JDL688 Singapore offers Arcade &amp; Table games, Fishing games, and Bingo &amp; Arcade titles from providers including Pragmatic Play, JILI, Spadegaming, CQ9, Evolution Gaming and Asia Gaming.</p></details>
+          <details><summary>How do I deposit at JDL688 Singapore?</summary><p>Click the DEPOSIT button and choose from Touch 'n Go, GrabPay, DuitNow, or crypto. Deposits are credited within minutes.</p></details>
+          <details><summary>How fast are withdrawals at JDL688 Singapore?</summary><p>Most withdrawals at JDL688 Singapore are processed within 2-24 hours, 24 hours a day.</p></details>
+        </div>
+
+        {siteConfig.compliance.copyrightLine && (
+          <p class="copyright-line">
+            <a href="/">© {siteConfig.brand}</a> · All Rights Reserved · 18+ Only · Please Gamble Responsibly
+          </p>
+        )}
+      </div>
+
+      <!-- ===== RIGHT COLUMN ===== -->
+      <div class="col-3 col-right">
+        <div class="login-box">
+          <h3>Member Login</h3>
+          <input type="text" id="loginUser" placeholder="Username" autocomplete="off" />
+          <input type="password" id="loginPass" placeholder="Password" autocomplete="off" />
+          <a href={siteConfig.cta} target="_blank" rel="noopener" class="login-btn shimmer">LOGIN</a>
+          <div class="login-row">
+            <a href={siteConfig.cta} target="_blank" rel="noopener" class="forgot-link">Forgot Password?</a>
+            <a href="/register/" class="register-link">Register →</a>
+          </div>
+        </div>
+
+        <div class="col-right-actions">
+          <a href={siteConfig.cta} target="_blank" rel="noopener" class="action-deposit">💳 DEPOSIT</a>
+          <a href={siteConfig.cta} target="_blank" rel="noopener" class="action-withdraw">💰 WITHDRAW</a>
+        </div>
+
+        <div class="panel-spacer">
+          <PromoPanel kind="referBg" />
+        </div>
+
+        <a href="/blog/" class="blog-link-btn">Read Our Latest Casino Guides →</a>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ SITE: siteConfig }}>
+  // Pattern 2 — Banner Slider
+  function buildSlider(container, imgs) {
+    container.innerHTML = `
+      <div class="slider" style="position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow-lift);">
+        ${imgs.map((src, i) => `
+          <div class="slide${i === 0 ? ' active' : ''}" style="display:${i === 0 ? 'block' : 'none'}">
+            <a href="${SITE.cta}" target="_blank" rel="noopener">
+              <img src="${src}" style="width:100%;display:block;">
+            </a>
+          </div>`).join('')}
+        <button onclick="sliderGo(-1)"
+                style="position:absolute;top:50%;left:4px;transform:translateY(-50%);
+                       background:rgba(0,0,0,.55);color:#fff;border:none;padding:8px 13px;cursor:pointer;z-index:2;border-radius:4px;">‹</button>
+        <button onclick="sliderGo(1)"
+                style="position:absolute;top:50%;right:4px;transform:translateY(-50%);
+                       background:rgba(0,0,0,.55);color:#fff;border:none;padding:8px 13px;cursor:pointer;z-index:2;border-radius:4px;">›</button>
+      </div>
+      <div style="text-align:center;padding:6px 0;">
+        ${imgs.map((_, i) => `<span class="dot${i === 0 ? ' active' : ''}" data-index="${i}"
+               style="display:inline-block;width:8px;height:8px;border-radius:50%;
+                      background:${i === 0 ? 'var(--accent)' : '#555'};margin:0 3px;cursor:pointer;"></span>`).join('')}
+      </div>`;
+
+    let current = 0;
+    const slides = container.querySelectorAll('.slide');
+    const dots = container.querySelectorAll('.dot');
+
+    window.sliderGo = function (delta) {
+      slides[current].style.display = 'none';
+      dots[current].style.background = '#555';
+      current = (current + delta + slides.length) % slides.length;
+      slides[current].style.display = 'block';
+      dots[current].style.background = 'var(--accent)';
+    };
+    dots.forEach(d => d.addEventListener('click', () => {
+      const target = parseInt(d.dataset.index);
+      sliderGo(target - current);
+    }));
+    setInterval(() => sliderGo(1), 3000);
+  }
+
+  // Pattern 3 — Live Transaction Table
+  function buildTxTable(container) {
+    container.innerHTML = `
+      <table id="tx-table" style="width:100%;table-layout:fixed;border-collapse:collapse;font-size:.76rem;margin-top:12px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-gold);">
+        <colgroup>
+          <col style="width:19%;"><col style="width:15%;"><col style="width:19%;"><col style="width:20%;"><col style="width:27%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <td colspan="5" style="background:var(--bg2);padding:7px 8px;border:1px solid #2a2a2a;">
+              <span style="color:var(--accent);font-weight:700;">LIVE TRANSACTION</span>
+              <span style="background:#cc0000;color:#fff;font-size:.6rem;font-weight:700;padding:2px 6px;border-radius:3px;float:right;">LIVE</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background:#0a3a0a;color:#4ade80;font-weight:700;padding:5px 8px;font-size:.72rem;">TOP UP</td>
+            <td colspan="3" style="background:#3a0a0a;color:#f87171;font-weight:700;padding:5px 8px;font-size:.72rem;">WITHDRAW</td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>`;
+
+    const tbody = container.querySelector('tbody');
+    const games = (SITE.txTable && SITE.txTable.games) || ['JILI', 'PRAGMATIC PLAY', 'SPADEGAMING', 'CQ9', 'EVOLUTION', 'ASIA GAMING'];
+    const phonePrefix = (SITE.txTable && SITE.txTable.phonePrefix) || '65';
+    const amountPrefix = (SITE.txTable && SITE.txTable.amountPrefix) || 'SGD';
+
+    function fmt(n) {
+      const [int, dec] = Number(n).toFixed(2).split('.');
+      return int.replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '.' + dec;
+    }
+    function fakePhone() {
+      let n = phonePrefix;
+      for (let i = 0; i < 8; i++) n += Math.floor(Math.random() * 10);
+      return n.slice(0, 3) + '*'.repeat(n.length - 6) + n.slice(-3);
+    }
+    const cell = 'padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;';
+
+    function addRow() {
+      const tr = document.createElement('tr');
+      const top = (Math.random() * 195 + 5).toFixed(2);
+      const wd = (Math.random() * 1150 + 50).toFixed(2);
+      const g = games[Math.floor(Math.random() * games.length)];
+      tr.innerHTML = `
+        <td style="${cell}color:#ccc;">${fakePhone()}</td>
+        <td style="${cell}color:#4ade80;font-weight:600;">${amountPrefix} ${fmt(top)}</td>
+        <td style="${cell}color:#ccc;">${fakePhone()}</td>
+        <td style="${cell}color:#f87171;font-weight:600;">${amountPrefix} ${fmt(wd)}</td>
+        <td style="${cell}color:var(--accent);font-weight:700;text-align:right;">${g}</td>`;
+      tr.style.cssText = 'opacity:0;border-bottom:1px solid #1a1a1a;';
+      tbody.prepend(tr);
+      requestAnimationFrame(() => { tr.style.transition = 'opacity .4s'; tr.style.opacity = '1'; });
+      if (tbody.rows.length > 7) tbody.deleteRow(tbody.rows.length - 1);
+    }
+    for (let i = 0; i < 5; i++) addRow();
+    setInterval(addRow, 2500);
+  }
+
+  // Pattern 4 — Game Tabs + Grid
+  function buildGameSection(container, tabs, cards) {
+    container.innerHTML = `
+      <div class="game-tabs" style="display:flex;overflow-x:auto;gap:4px;padding:8px 0;scrollbar-width:none;">
+        ${tabs.map((t, i) => `
+          <button class="game-tab${i === 0 ? ' active' : ''}" data-target="${t.id}"
+                  style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 8px;
+                         background:transparent;border:2px solid ${i === 0 ? 'var(--accent)' : 'transparent'};
+                         border-radius:10px;color:var(--text);cursor:pointer;min-width:68px;flex-shrink:0;">
+            <span style="width:54px;height:54px;border-radius:12px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.5);">
+              <img src="${i === 0 ? t.iconActive : t.iconDefault}"
+                   data-default="${t.iconDefault}" data-active="${t.iconActive}"
+                   style="width:100%;height:100%;object-fit:cover;display:block;">
+            </span>
+            <span style="white-space:nowrap;font-size:.65rem;${i === 0 ? 'color:var(--accent);font-weight:700;' : ''}">${t.label}</span>
+          </button>`).join('')}
+      </div>
+      ${tabs.map((t, i) => `
+        <div class="game-section" id="${t.id}"
+             style="display:${i === 0 ? 'grid' : 'none'};grid-template-columns:repeat(5,1fr);gap:10px;margin-top:8px;">
+          ${(cards[t.id] || []).map(c => `
+            <a href="${SITE.cta}" target="_blank" rel="noopener"
+               style="display:block;background:var(--bg2);border:1px solid #2a2a2a;
+                      border-radius:14px;overflow:hidden;aspect-ratio:1/1;transition:transform .15s,border-color .15s;">
+              <img src="${c.src}" loading="lazy" onerror="this.closest('a')?.remove()"
+                   style="width:100%;height:100%;object-fit:cover;display:block;">
+            </a>`).join('')}
+        </div>`).join('')}`;
+
+    container.querySelectorAll('.game-section a').forEach(a => {
+      a.addEventListener('mouseenter', () => a.style.transform = 'translateY(-2px)');
+      a.addEventListener('mouseleave', () => a.style.transform = 'translateY(0)');
+    });
+
+    container.querySelectorAll('.game-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        container.querySelectorAll('.game-section').forEach(s => s.style.display = 'none');
+        container.querySelectorAll('.game-tab').forEach(t => {
+          t.style.borderColor = 'transparent';
+          const img = t.querySelector('img');
+          if (img) img.src = img.dataset.default;
+          const lbl = t.querySelector('span:last-child');
+          if (lbl) { lbl.style.color = ''; lbl.style.fontWeight = ''; }
+        });
+        tab.style.borderColor = 'var(--accent)';
+        const img = tab.querySelector('img');
+        if (img) img.src = img.dataset.active;
+        const lbl = tab.querySelector('span:last-child');
+        if (lbl) { lbl.style.color = 'var(--accent)'; lbl.style.fontWeight = '700'; }
+        const target = document.getElementById(tab.dataset.target);
+        if (target) target.style.display = 'grid';
+      });
+    });
+  }
+
+  buildSlider(document.getElementById('bannerSlider'), SITE.images.banners);
+  buildTxTable(document.getElementById('txTableWrap'));
+  buildGameSection(document.getElementById('gameSection'), SITE.images.tabs, SITE.images.gameCards);
+
+  document.getElementById('copyReferralBtn')?.addEventListener('click', () => {
+    window.copyReferral(SITE.cta);
+  });
+
+  // Fake login: focus blurs and opens CTA
+  ['loginUser', 'loginPass'].forEach(id => {
+    document.getElementById(id)?.addEventListener('focus', (e) => {
+      e.target.blur();
+      window.open(SITE.cta, '_blank', 'noopener');
+    });
+  });
+</script>
+
+<style>
+  #content { padding: 12px 6px; }
+  .body-grid {
+    display: grid;
+    grid-template-columns: .9fr 2.5fr .9fr;
+    gap: 12px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .col-1, .col-2, .col-3 { min-width: 0; }
+  .panel-spacer { margin-top: 12px; }
+
+  .static-banner-link { display: block; margin-top: 8px; }
+  .static-banner { width: 100%; border-radius: var(--radius); display: block; border: 1px solid var(--line); }
+
+  .referral-section {
+    margin-top: 16px; padding: 12px; border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(26,26,46,.7), rgba(13,17,34,.7));
+    border: 1px solid var(--line);
+  }
+  .referral-heading { font-size: .85rem; color: var(--accent); margin-bottom: 10px; font-weight: 700; letter-spacing: .02em; }
+  .referral-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cta-btn-copy { font-family: inherit; }
+
+  /* --- App download section --- */
+  .app-download-section { margin-top: 28px; }
+  .section-heading { color: var(--accent); font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+  .section-sub { color: #9aa4c2; font-size: .8rem; margin-bottom: 14px; }
+  .app-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .app-card {
+    background: var(--bg2); border: 1px solid #2a2a2a; border-radius: var(--radius);
+    padding: 10px; text-align: center; transition: transform .15s var(--ease-out), border-color .15s;
+  }
+  .app-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .app-card img { width: 48px; height: 48px; object-fit: cover; border-radius: 10px; margin: 0 auto 6px; display: block; }
+  .app-name { font-size: .68rem; font-weight: 600; margin-bottom: 8px; line-height: 1.25; min-height: 2.3em; }
+  .app-btns { display: flex; gap: 4px; }
+  .app-btn { flex: 1; font-size: .6rem; font-weight: 700; padding: 5px 2px; border-radius: 20px; background: rgba(245,208,67,.12); color: var(--accent); border: 1px solid var(--accent); }
+
+  /* --- Licence / certifications / follow --- */
+  .licence-section, .cert-section, .follow-section { margin-top: 24px; text-align: center; }
+  .licence-label { font-size: .7rem; color: #0d1f40; background: var(--accent); display: inline-block; padding: 2px 10px; border-radius: 10px; margin-bottom: 8px; font-weight: 700; }
+  .licence-badge-wrap {
+    display: flex; align-items: center; justify-content: center;
+    width: fit-content; margin: 0 auto;
+    background: #fff; padding: 8px 16px; border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.35);
+  }
+  .licence-badge { height: 40px; width: auto; display: block; }
+  .cert-grid {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    max-width: 600px; margin: 0 auto;
+  }
+  .cert-logo { height: 44px; width: auto; border-radius: 8px; }
+  .follow-icons { display: flex; gap: 14px; justify-content: center; }
+  .follow-icons img { height: 34px; width: 34px; border-radius: 50%; }
+
+  /* --- SEO article --- */
+  .seo-article {
+    background: rgba(13,31,64,.85); padding: 18px; border-radius: var(--radius); margin-top: 28px;
+    line-height: 1.7; font-size: .87rem; border: 1px solid var(--line);
+  }
+  .seo-article h1 { font-size: 1.25rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
+  .seo-article h3 { color: var(--accent); font-size: 1rem; font-weight: 700; margin: 22px 0 10px; }
+  .seo-article p { margin-bottom: 12px; color: #dbe1f2; }
+  .seo-article ul, .seo-article ol { padding-left: 20px; margin-bottom: 12px; color: #dbe1f2; }
+  .seo-article li { margin-bottom: 6px; line-height: 1.6; }
+  .seo-article a { color: var(--accent); text-decoration: underline; }
+  .seo-article details { background: var(--bg2); border: 1px solid #2a3a5c; border-radius: var(--radius); padding: 10px 14px; margin-bottom: 10px; }
+  .seo-article summary { cursor: pointer; font-weight: 700; color: #fff; }
+  .seo-article details p { margin: 8px 0 0; }
+
+  .copyright-line { text-align: center; color: #6b7da3; font-size: .72rem; margin-top: 20px; }
+  .copyright-line a { color: #6b7da3; text-decoration: underline; }
+
+  /* --- Right column --- */
+  .login-box {
+    border: 1px solid var(--accent); padding: 16px 14px; border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(26,26,46,.9), rgba(13,17,34,.9));
+    box-shadow: var(--shadow-gold);
+  }
+  .login-box h3 { font-size: 1rem; margin-bottom: 12px; color: var(--accent); }
+  .login-box input {
+    width: 100%; padding: 10px; margin-bottom: 10px; background: var(--bg);
+    border: 1px solid #3a3a4a; border-radius: var(--radius); color: var(--text); font-size: .85rem;
+  }
+  .login-box input:focus { border-color: var(--accent); }
+  .login-btn {
+    display: block; width: 100%; text-align: center; padding: 11px 0; border-radius: var(--radius);
+    background: var(--accent); color: #000; font-weight: 800; margin-bottom: 10px;
+  }
+  .login-row { display: flex; justify-content: space-between; font-size: .78rem; }
+  .forgot-link { color: #9aa4c2; }
+  .register-link { color: var(--accent); font-weight: 700; }
+
+  .col-right-actions { display: flex; gap: 8px; margin-top: 10px; }
+  .action-deposit, .action-withdraw {
+    padding: 11px 22px; border-radius: var(--radius); font-weight: 700; text-align: center; flex: 1; font-size: .85rem;
+  }
+  .action-deposit { background: var(--accent); color: #000; }
+  .action-withdraw { background: var(--bg2); color: var(--accent); border: 1px solid var(--accent); }
+
+  .blog-link-btn {
+    display: block; margin-top: 10px; text-align: center; color: var(--accent); font-weight: 700;
+    padding: 10px; border: 1px dashed var(--line); border-radius: var(--radius);
+  }
+
+  @media (max-width: 900px) {
+    .app-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .app-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

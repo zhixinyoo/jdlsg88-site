@@ -1,0 +1,189 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PromoPanel from '../../components/PromoPanel.astro';
+import { siteConfig } from '../../config/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map(post => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, description, pubDate, image, category, ctaLabel, relatedPosts = [] } = post.data;
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const related = allPosts
+  .filter(p => relatedPosts.includes(p.id) && p.id !== post.id)
+  .slice(0, 5);
+const padded = related.length >= 3
+  ? related
+  : [
+      ...related,
+      ...allPosts
+        .filter(p => p.id !== post.id && !relatedPosts.includes(p.id))
+        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+        .slice(0, 5 - related.length),
+    ].slice(0, 5);
+---
+
+<Layout title={title} description={description} ogImage={image}>
+  <article class="post-layout">
+
+    {image && (
+      <div class="post-hero">
+        <img src={image} alt={title} class="post-hero-img" />
+        <div class="post-hero-overlay">
+          <a href={`/blog/category/${category.toLowerCase().trim().replace(/\s+/g, '-')}/`} class="post-category">{category}</a>
+          <h1 class="post-title">{title}</h1>
+          <time class="post-date">{pubDate.toLocaleDateString('en-SG', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+        </div>
+      </div>
+    )}
+
+    <div class="post-body">
+      <aside class="post-sidebar">
+
+        <div class="sidebar-cta-card">
+          <img src={siteConfig.images.logo} alt={siteConfig.brand} class="sidebar-logo" />
+          <p class="sidebar-brand">{siteConfig.brand}</p>
+          <ul class="sidebar-perks">
+            <li>✓ Licensed &amp; Regulated</li>
+            <li>✓ Instant Withdrawals</li>
+            <li>✓ 24/7 Live Support</li>
+            <li>✓ Welcome Bonus Available</li>
+          </ul>
+          <a href={siteConfig.cta} target="_blank" rel="noopener" class="sidebar-cta-btn shimmer">
+            {ctaLabel} →
+          </a>
+        </div>
+
+        <PromoPanel kind="promo1" compact />
+
+        <div class="sidebar-related">
+          <h4>Related Reviews</h4>
+          {padded.map(p => (
+            <a href={`/blog/${p.id}`} class="sidebar-post">
+              {p.data.image && <img src={p.data.image} alt={p.data.title} class="sidebar-post-img" />}
+              <div>
+                <p class="sidebar-post-title">{p.data.title}</p>
+                <time class="sidebar-post-date">
+                  {p.data.pubDate.toLocaleDateString('en-SG', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </time>
+              </div>
+            </a>
+          ))}
+        </div>
+
+      </aside>
+
+      <div class="post-content prose">
+        <Content />
+      </div>
+    </div>
+
+  </article>
+</Layout>
+
+<script define:vars={{ cta: siteConfig.cta, label: ctaLabel, brand: siteConfig.brand }}>
+  document.querySelectorAll('.post-content p').forEach(p => {
+    if (p.textContent.trim() === '[CTA_BUTTON]') {
+      p.outerHTML = `
+        <div class="inline-cta">
+          <a href="${cta}" target="_blank" rel="noopener" class="inline-cta-btn shimmer">
+            🎰 ${label} at ${brand}
+          </a>
+        </div>`;
+    }
+  });
+</script>
+
+<style is:global>
+.post-layout { max-width: 1100px; margin: 0 auto; padding: var(--gap); padding-bottom: 80px; }
+
+.post-hero { position: relative; border-radius: var(--radius); overflow: hidden; margin-bottom: 32px; border: 1px solid var(--line); box-shadow: var(--shadow-lift); }
+.post-hero-img { width: 100%; max-height: 420px; object-fit: cover; display: block; }
+.post-hero-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 24px;
+  background: linear-gradient(transparent, rgba(0,0,0,.85));
+}
+.post-category {
+  background: var(--accent); color: #000; font-size: .72rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .05em;
+}
+.post-title { font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 800; margin: 10px 0 6px; line-height: 1.25; }
+.post-date { font-size: .78rem; color: #aaa; }
+
+.post-body { display: grid; grid-template-columns: 1fr 280px; gap: 32px; align-items: start; }
+
+.post-sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 16px; }
+.sidebar-cta-card {
+  background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius);
+  padding: 20px; text-align: center; box-shadow: var(--shadow-gold);
+}
+.sidebar-logo { max-width: 100px; margin: 0 auto 10px; }
+.sidebar-brand { font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
+.sidebar-perks { list-style: none; text-align: left; font-size: .82rem; margin-bottom: 16px; line-height: 1.9; color: #ccc; }
+.sidebar-cta-btn {
+  display: block; width: 100%; padding: 12px; background: var(--accent); color: #000;
+  font-weight: 800; border-radius: var(--radius); font-size: .9rem;
+  transition: opacity .2s;
+}
+.sidebar-cta-btn:hover { opacity: .85; }
+.sidebar-related { background: var(--bg2); border: 1px solid #333; border-radius: var(--radius); padding: 16px; }
+.sidebar-related h4 { color: var(--accent); font-size: .85rem; margin-bottom: 12px; }
+.sidebar-post { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
+.sidebar-post:last-child { margin-bottom: 0; }
+.sidebar-post-img { width: 60px; height: 45px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+.sidebar-post-title { font-size: .8rem; font-weight: 600; line-height: 1.3; margin-bottom: 3px; }
+.sidebar-post-date { font-size: .72rem; color: #888; }
+
+.prose { line-height: 1.9; font-size: 1rem; color: #ddd; }
+.prose h2 { color: var(--accent); font-size: 1.35rem; font-weight: 700; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid #2a2a2a; }
+.prose h3 { color: var(--accent); font-size: 1.1rem; font-weight: 600; margin: 36px 0 12px; }
+.prose h4 { color: #fff; font-size: .95rem; font-weight: 600; margin: 28px 0 10px; }
+.prose p { margin-bottom: 1.15em; }
+.prose ul, .prose ol { padding-left: 22px; margin-bottom: 1.15em; }
+.prose li { margin-bottom: 0.5em; line-height: 1.8; }
+.prose strong { color: #fff; font-weight: 700; }
+.prose a { color: var(--accent); text-decoration: underline; }
+.prose a:hover { opacity: .8; }
+.prose blockquote {
+  border-left: 3px solid var(--accent); padding: 12px 16px;
+  background: var(--bg2); border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 1.15em 0; font-style: italic; color: #ccc;
+}
+.prose details { background: var(--bg2); border: 1px solid #333; border-radius: var(--radius); padding: 12px 16px; margin-bottom: 1.15em; }
+.prose summary { cursor: pointer; font-weight: 600; color: #fff; }
+.prose summary:hover { color: var(--accent); }
+.prose details[open] summary { color: var(--accent); margin-bottom: 10px; }
+.prose table { width: 100%; border-collapse: collapse; margin-bottom: 1.15em; font-size: .85rem; }
+.prose th { background: var(--accent); color: #000; padding: 10px 12px; text-align: left; font-weight: 700; }
+.prose td { padding: 9px 12px; border-bottom: 1px solid #2a2a2a; }
+.prose tr:nth-child(even) td { background: rgba(255,255,255,.03); }
+
+.post-cta-box {
+  background: var(--bg2); border: 1px solid var(--accent); border-radius: var(--radius);
+  padding: 20px 24px; margin: 32px 0; text-align: center;
+}
+.post-cta-box p { margin-bottom: 14px; font-size: .95rem; color: #ddd; }
+.post-cta-box a[href="/"] { color: var(--accent); font-weight: 700; text-decoration: underline; }
+
+.inline-cta { text-align: center; margin: 32px 0; }
+.inline-cta-btn {
+  display: inline-block; padding: 16px 36px; background: var(--accent); color: #000;
+  font-weight: 800; font-size: 1.05rem; border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,.4); transition: transform .15s, opacity .15s;
+  letter-spacing: .02em;
+}
+.inline-cta-btn:hover { transform: translateY(-2px); opacity: .9; }
+/* .prose a { color: var(--accent) } outranks .inline-cta-btn on specificity alone —
+   without this, the button text renders in the same gold as its own background. */
+.prose a.inline-cta-btn { color: #000; text-decoration: none; }
+
+@media (max-width: 900px) {
+  .post-body { grid-template-columns: 1fr; }
+  .post-sidebar { position: static; }
+}
+</style>

@@ -1,0 +1,106 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import PromoPanel from '../../../components/PromoPanel.astro';
+import { siteConfig } from '../../../config/site';
+
+function slugify(s: string) {
+  return s.toLowerCase().trim().replace(/\s+/g, '-');
+}
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const categories = [...new Set(allPosts.map((p) => p.data.category))];
+  return categories.map((category) => ({
+    params: { category: category.toLowerCase().trim().replace(/\s+/g, '-') },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const posts = allPosts
+  .filter((p) => p.data.category === category)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const recent = allPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
+
+const allCategories = [...new Set(allPosts.map((p) => p.data.category))];
+---
+
+<Layout
+  title={`${category} - ${siteConfig.brand} Casino Tips & News`}
+  description={`Browse all ${category} posts from ${siteConfig.brand} — Singapore online casino guides, reviews and bonus breakdowns.`}
+>
+  <div class="blog-layout">
+    <main>
+      <a href="/blog/" class="blog-back-link">← All Posts</a>
+      <h1 class="blog-heading">{category}</h1>
+      <p class="blog-subheading">{posts.length} post{posts.length === 1 ? '' : 's'} in {category} from {siteConfig.brand}.</p>
+
+      <div class="blog-cat-nav">
+        <a href="/blog/" class="blog-cat-pill">All</a>
+        {allCategories.map((c) => (
+          <a href={`/blog/category/${slugify(c)}/`} class={`blog-cat-pill${c === category ? ' active' : ''}`}>{c}</a>
+        ))}
+      </div>
+
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="blog-card">
+            {post.data.image && <img src={post.data.image} alt={post.data.title} class="blog-card-img" />}
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-tag">{post.data.category}</span>
+                <span class="blog-date">
+                  {post.data.pubDate.toLocaleDateString('en-SG', { year: 'numeric', month: 'short', day: 'numeric' })}
+                </span>
+              </div>
+              <h2 class="blog-card-title">{post.data.title}</h2>
+              <p class="blog-card-excerpt">{post.data.description}</p>
+              <span class="blog-read-more">READ MORE →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+
+    <aside class="blog-sidebar">
+      <div class="sidebar-widget">
+        <h3>Search</h3>
+        <div class="sidebar-search">
+          <input id="blogSearch" type="search" placeholder="Search posts..." />
+          <a href={siteConfig.cta} target="_blank" rel="noopener" class="search-btn">Go</a>
+        </div>
+      </div>
+
+      <PromoPanel kind="promo1" />
+
+      <div class="sidebar-widget">
+        <h3>Recent Posts</h3>
+        {recent.map((post) => (
+          <a href={`/blog/${post.id}`} class="sidebar-post">
+            {post.data.image && <img src={post.data.image} alt={post.data.title} class="sidebar-post-img" />}
+            <div>
+              <p class="sidebar-post-title">{post.data.title}</p>
+              <time class="sidebar-post-date">
+                {post.data.pubDate.toLocaleDateString('en-SG', { month: 'short', day: 'numeric', year: 'numeric' })}
+              </time>
+            </div>
+          </a>
+        ))}
+      </div>
+    </aside>
+  </div>
+</Layout>
+
+<script define:vars={{ cta: siteConfig.cta }}>
+  document.getElementById('blogSearch')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') window.open(cta, '_blank', 'noopener');
+  });
+</script>
+
+<!-- Blog listing styles (.blog-layout, .blog-grid, .blog-card, .blog-cat-nav, .sidebar-*, etc.)
+     live in Layout.astro so every blog-listing page gets them automatically. -->

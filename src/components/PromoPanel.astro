@@ -1,0 +1,53 @@
+---
+// CSS-only accent-bordered panel used wherever the original site had a promo/refer image
+// that was never scraped (see .chameleon/competitor-reference.json notes field).
+import { siteConfig } from '../config/site';
+
+interface Props {
+  kind: 'promo1' | 'promo2' | 'referBg';
+  compact?: boolean;
+}
+const { kind, compact = false } = Astro.props;
+const data = siteConfig.images.panels[kind];
+---
+
+<a href={siteConfig.cta} target="_blank" rel="noopener" class:list={['promo-panel', { compact }]}>
+  <span class="promo-panel-eyebrow">{data.eyebrow}</span>
+  <span class="promo-panel-headline">{data.headline}</span>
+  <span class="promo-panel-sub">{data.subtext}</span>
+  <span class="promo-panel-cta">{data.cta} →</span>
+</a>
+
+<style>
+  .promo-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    background:
+      linear-gradient(135deg, rgba(245,208,67,.14), rgba(9,23,78,.55)),
+      linear-gradient(180deg, rgba(26,26,46,.95), rgba(13,17,34,.95));
+    border: 1px solid var(--accent);
+    box-shadow: var(--shadow-gold);
+    position: relative;
+    overflow: hidden;
+    transition: transform .18s var(--ease-out), box-shadow .18s;
+  }
+  .promo-panel::before {
+    content: '';
+    position: absolute; inset: -40% -10% auto auto; width: 60%; aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(245,208,67,.25), transparent 65%);
+    pointer-events: none;
+  }
+  .promo-panel:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(0,0,0,.55); }
+  .promo-panel-eyebrow {
+    font-size: .65rem; font-weight: 800; letter-spacing: .08em; color: var(--accent);
+    text-transform: uppercase;
+  }
+  .promo-panel-headline { font-size: 1.05rem; font-weight: 800; color: #fff; line-height: 1.25; }
+  .promo-panel-sub { font-size: .78rem; color: #cbd2e6; line-height: 1.4; margin-bottom: 6px; }
+  .promo-panel-cta { font-size: .8rem; font-weight: 700; color: var(--accent); }
+  .promo-panel.compact { padding: 12px 14px; }
+  .promo-panel.compact .promo-panel-headline { font-size: .92rem; }
+</style>

@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PromoPanel from '../../components/PromoPanel.astro';
+import { siteConfig } from '../../config/site';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featured = posts.filter(p => p.data.featured).slice(0, 3);
+const recent = posts.slice(0, 5);
+const categories = [...new Set(posts.map((p) => p.data.category))];
+const slugify = (s: string) => s.toLowerCase().trim().replace(/\s+/g, '-');
+---
+
+<Layout
+  title={`Casino Tips & News - ${siteConfig.brand}`}
+  description={`Latest casino guides, slot strategies, and gaming news from ${siteConfig.brand}. Expert tips to maximise your winnings.`}
+>
+  <div class="blog-layout">
+    <main>
+      <h1 class="blog-heading">{siteConfig.brand} Casino Tips &amp; News</h1>
+      <p class="blog-subheading">Guides, reviews and bonus breakdowns for JDL688 Singapore players.</p>
+
+      <div class="blog-cat-nav">
+        <a href="/blog/" class="blog-cat-pill active">All</a>
+        {categories.map((c) => (
+          <a href={`/blog/category/${slugify(c)}/`} class="blog-cat-pill">{c}</a>
+        ))}
+      </div>
+
+      {featured.length > 0 && (
+        <div class="blog-featured">
+          {featured.map(post => (
+            <a href={`/blog/${post.id}`} class="blog-card blog-card--featured">
+              {post.data.image && <img src={post.data.image} alt={post.data.title} class="blog-card-img" />}
+              <div class="blog-card-body">
+                <span class="blog-tag">{post.data.category}</span>
+                <h2 class="blog-card-title">{post.data.title}</h2>
+                <p class="blog-card-excerpt">{post.data.description}</p>
+                <span class="blog-read-more">READ MORE →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+
+      <div class="blog-grid">
+        {posts.map(post => (
+          <a href={`/blog/${post.id}`} class="blog-card">
+            {post.data.image && <img src={post.data.image} alt={post.data.title} class="blog-card-img" />}
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span class="blog-tag">{post.data.category}</span>
+                <span class="blog-date">
+                  {post.data.pubDate.toLocaleDateString('en-SG', { year: 'numeric', month: 'short', day: 'numeric' })}
+                </span>
+              </div>
+              <h2 class="blog-card-title">{post.data.title}</h2>
+              <p class="blog-card-excerpt">{post.data.description}</p>
+              <span class="blog-read-more">READ MORE →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+
+    <aside class="blog-sidebar">
+      <div class="sidebar-widget">
+        <h3>Search</h3>
+        <div class="sidebar-search">
+          <input id="blogSearch" type="search" placeholder="Search posts..." />
+          <a href={siteConfig.cta} target="_blank" rel="noopener" class="search-btn">Go</a>
+        </div>
+      </div>
+
+      <PromoPanel kind="promo1" />
+
+      <div class="sidebar-widget">
+        <h3>Recent Posts</h3>
+        {recent.map(post => (
+          <a href={`/blog/${post.id}`} class="sidebar-post">
+            {post.data.image && <img src={post.data.image} alt={post.data.title} class="sidebar-post-img" />}
+            <div>
+              <p class="sidebar-post-title">{post.data.title}</p>
+              <time class="sidebar-post-date">
+                {post.data.pubDate.toLocaleDateString('en-SG', { month: 'short', day: 'numeric', year: 'numeric' })}
+              </time>
+            </div>
+          </a>
+        ))}
+      </div>
+    </aside>
+  </div>
+</Layout>
+
+<script define:vars={{ cta: siteConfig.cta }}>
+  document.getElementById('blogSearch')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') window.open(cta, '_blank', 'noopener');
+  });
+</script>
+
+<!-- Blog listing styles (.blog-layout, .blog-grid, .blog-card, .sidebar-*, etc.)
+     live in Layout.astro so every blog-listing page gets them automatically. -->

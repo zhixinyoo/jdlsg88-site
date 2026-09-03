@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site';
+---
+
+<Layout
+  title={`Register - ${siteConfig.brand}`}
+  description={`Create your ${siteConfig.brand} account today and claim your welcome bonus. Fast registration, instant access.`}
+>
+  <div class="auth-wrap">
+    <div class="auth-card surface">
+      <img src={siteConfig.images.logo} alt={siteConfig.brand} class="auth-logo" />
+      <h1 class="auth-title">Register at {siteConfig.brand}</h1>
+
+      <input type="text" id="regName" class="auth-input" placeholder="Full Name" autocomplete="off" />
+      <input type="text" id="regContact" class="auth-input" placeholder="Phone / Email" autocomplete="off" />
+      <input type="text" id="regUser" class="auth-input" placeholder="Username" autocomplete="off" />
+      <input type="password" id="regPass" class="auth-input" placeholder="Password" autocomplete="off" />
+      <input type="text" id="regReferral" class="auth-input" placeholder="Referral Code (optional)" autocomplete="off" />
+
+      <a href={siteConfig.cta} target="_blank" rel="noopener" class="auth-btn shimmer">REGISTER NOW</a>
+
+      <div class="auth-links auth-links--center">
+        <a href="/login/">Already have an account? Login →</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ cta: siteConfig.cta }}>
+  ['regName', 'regContact', 'regUser', 'regPass', 'regReferral'].forEach(id => {
+    document.getElementById(id)?.addEventListener('focus', (e) => {
+      e.target.blur();
+      window.open(cta, '_blank', 'noopener');
+    });
+  });
+</script>
+
+<style>
+  .auth-wrap {
+    min-height: calc(100vh - 200px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px 16px;
+  }
+  .auth-card {
+    width: 100%; max-width: 400px; padding: 32px 26px; text-align: center;
+  }
+  .auth-logo { max-width: 120px; margin: 0 auto 16px; display: block; }
+  .auth-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 20px; color: var(--accent); }
+  .auth-input {
+    width: 100%; padding: 12px; margin-bottom: 12px; background: var(--bg);
+    border: 1px solid #3a3a4a; border-radius: var(--radius); color: var(--text); font-size: .9rem;
+  }
+  .auth-input:focus { border-color: var(--accent); }
+  .auth-btn {
+    display: block; width: 100%; padding: 13px 0; border-radius: var(--radius);
+    background: var(--accent); color: #000; font-weight: 800; margin: 8px 0 16px; font-size: .95rem;
+  }
+  .auth-links { display: flex; justify-content: space-between; font-size: .82rem; }
+  .auth-links--center { justify-content: center; }
+  .auth-links a { color: var(--accent); font-weight: 700; }
+</style>
