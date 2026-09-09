@@ -198,27 +198,27 @@ const ogImageAbsolute = ogImage.startsWith('http')
       position: sticky; top: 0; z-index: 100;
       display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
       padding: 4px 10px;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent) 60%, var(--accent-dim));
-      border-bottom: 3px solid var(--navy-deep);
+      background: linear-gradient(135deg, var(--bg2), var(--navy-deep));
+      border-bottom: 3px solid var(--accent);
       box-shadow: 0 2px 18px rgba(0,0,0,.45);
     }
     .header-hamburger {
-      background: none; border: none; color: #000; font-size: 1.4rem; cursor: pointer; justify-self: start;
+      background: none; border: none; color: var(--accent); font-size: 1.4rem; cursor: pointer; justify-self: start;
       transition: transform .15s;
     }
     .header-hamburger:active { transform: scale(.9); }
     .header-logo-wrap { text-align: center; }
-    .header-logo-wrap img { height: 40px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.25)); }
+    .header-logo-wrap img { height: 40px; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,.5)); }
     .header-btns { display: flex; gap: 6px; justify-content: flex-end; align-items: center; }
     .btn-login-hdr {
       padding: 7px 14px; font-size: .8rem; font-weight: 700; border-radius: var(--radius);
-      background: transparent; border: 1.5px solid #000; color: #000;
+      background: transparent; border: 1.5px solid var(--accent); color: var(--accent);
       transition: background .15s, color .15s;
     }
-    .btn-login-hdr:hover { background: rgba(0,0,0,.08); }
+    .btn-login-hdr:hover { background: rgba(245, 208, 67, .1); }
     .btn-register-hdr {
       padding: 7px 14px; font-size: .8rem; font-weight: 700; border-radius: var(--radius);
-      background: #000; color: var(--accent);
+      background: var(--accent); color: #000;
       box-shadow: 0 3px 10px rgba(0,0,0,.35);
       transition: transform .15s, box-shadow .15s;
     }
