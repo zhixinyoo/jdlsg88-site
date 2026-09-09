@@ -63,9 +63,9 @@ const faqSchema = {
       <div class="col-1">
         <div id="bannerSlider"></div>
 
-        <a href={siteConfig.cta} target="_blank" rel="noopener" class="static-banner-link">
-          <img src={siteConfig.images.staticBanner} alt={siteConfig.brand} class="static-banner" />
-        </a>
+        <div class="panel-spacer">
+          <PromoPanel kind="freeCredit" />
+        </div>
 
         <div id="txTableWrap"></div>
 
@@ -412,9 +412,6 @@ const faqSchema = {
   }
   .col-1, .col-2, .col-3 { min-width: 0; }
   .panel-spacer { margin-top: 12px; }
-
-  .static-banner-link { display: block; margin-top: 8px; }
-  .static-banner { width: 100%; border-radius: var(--radius); display: block; border: 1px solid var(--line); }
 
   .referral-section {
     margin-top: 16px; padding: 12px; border-radius: var(--radius);

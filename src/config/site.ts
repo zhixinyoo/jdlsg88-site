@@ -47,8 +47,6 @@ export const siteConfig = {
     badge18Plus: "/assets/shared/18plus.png",
 
     banners: ["/assets/homepage/banner-1.png"],
-    // No distinct static banner was scraped (site only had one hero image) — reuse banner-1.
-    staticBanner: "/assets/homepage/banner-1.png",
 
     blogImages: [
       "/assets/blog/blog-1.jpg",
@@ -155,6 +153,12 @@ export const siteConfig = {
     // No promo1/promo2/referBg images were scraped — rendered as CSS-only accent-bordered
     // panels (see src/components/PromoPanel.astro) instead of broken <img> references.
     panels: {
+      freeCredit: {
+        eyebrow: "NEW MEMBERS",
+        headline: "SGD 10-20 Free Credit",
+        subtext: "Free credit on your first deposit — no wagering tricks, just play.",
+        cta: "Claim Free Credit",
+      },
       promo1: {
         eyebrow: "LIMITED TIME",
         headline: "100% Welcome Bonus",
