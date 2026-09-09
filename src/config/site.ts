@@ -46,7 +46,7 @@ export const siteConfig = {
     telegramIcon: "/assets/shared/telegram-icon.png",
     badge18Plus: "/assets/shared/18plus.png",
 
-    banners: ["/assets/homepage/banner-1.png"],
+    banners: ["/assets/homepage/promo-banner-1.jpg", "/assets/homepage/promo-banner-2.jpg"],
 
     tabs: [
       {
