@@ -51,32 +51,32 @@ export const siteConfig = {
     tabs: [
       {
         label: "Online Casino Games",
-        id: "cat-4",
+        id: "online-casino-games",
         iconDefault: "/assets/homepage/game-cat1-5.png",
         iconActive: "/assets/homepage/game-cat1-5.png",
       },
       {
         label: "Arcade & Table",
-        id: "cat-1",
+        id: "arcade-table",
         iconDefault: "/assets/homepage/game-cat1-1.png",
         iconActive: "/assets/homepage/game-cat1-1.png",
       },
       {
         label: "Fishing",
-        id: "cat-2",
+        id: "fishing",
         iconDefault: "/assets/homepage/game-cat2-1.png",
         iconActive: "/assets/homepage/game-cat2-1.png",
       },
       {
         label: "Bingo & Arcade",
-        id: "cat-3",
+        id: "bingo-arcade",
         iconDefault: "/assets/homepage/game-cat3-1.png",
         iconActive: "/assets/homepage/game-cat3-1.png",
       },
     ],
 
     gameCards: {
-      "cat-4": [
+      "online-casino-games": [
         { src: "/assets/homepage/game-cat1-1.png", label: "Justice Bao" },
         { src: "/assets/homepage/game-cat1-2.png", label: "Monkey King" },
         { src: "/assets/homepage/game-cat1-3.png", label: "Sic Bo" },
@@ -100,7 +100,7 @@ export const siteConfig = {
         { src: "/assets/homepage/game-cat3-3.png", label: "Elf Bingo" },
         { src: "/assets/homepage/game-cat3-4.png", label: "Jackpot Bingo" },
       ],
-      "cat-1": [
+      "arcade-table": [
         { src: "/assets/homepage/game-cat1-1.png", label: "Justice Bao" },
         { src: "/assets/homepage/game-cat1-2.png", label: "Monkey King" },
         { src: "/assets/homepage/game-cat1-3.png", label: "Sic Bo" },
@@ -108,7 +108,7 @@ export const siteConfig = {
         { src: "/assets/homepage/game-cat1-5.png", label: "Great Blue" },
         { src: "/assets/homepage/game-cat1-6.png", label: "Roulette 36 Synchronize" },
       ],
-      "cat-2": [
+      "fishing": [
         { src: "/assets/homepage/game-cat2-1.png", label: "All-Star" },
         { src: "/assets/homepage/game-cat2-2.png", label: "Happy Fishing" },
         { src: "/assets/homepage/game-cat2-3.png", label: "Ocean King Jackpot" },
@@ -122,7 +122,7 @@ export const siteConfig = {
         { src: "/assets/homepage/game-cat2-11.png", label: "Bingo" },
         { src: "/assets/homepage/game-cat2-12.png", label: "JILI" },
       ],
-      "cat-3": [
+      "bingo-arcade": [
         { src: "/assets/homepage/game-cat3-1.png", label: "Journey West" },
         { src: "/assets/homepage/game-cat3-2.png", label: "Jogo do Bicho" },
         { src: "/assets/homepage/game-cat3-3.png", label: "Elf Bingo" },
