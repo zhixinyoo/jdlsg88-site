@@ -2,7 +2,7 @@
 title: "JDL688 Singapore Free Credit & Welcome Bonus — Full Breakdown"
 description: "Everything you need to know about the JDL688 Singapore welcome bonus, free credit offer, daily rebate and VIP cashback tiers."
 pubDate: 2026-02-03
-image: "/assets/homepage/game-cat2-9.png"
+image: "/assets/blog/jdl688-free-credit-welcome-bonus.jpg"
 category: "Bonuses"
 tags: ["bonus", "free credit", "cashback", "promotions"]
 keywords: ["JDL688 bonus", "JDL688 free credit", "JDL688 promo", "online casino Singapore bonus", "JDL688 Singapore"]

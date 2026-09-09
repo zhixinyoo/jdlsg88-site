@@ -2,7 +2,7 @@
 title: "JDL688 Singapore Login & Register Guide — Get Started in 2 Minutes"
 description: "Learn how to login and register at JDL688 Singapore. Step-by-step guide plus how to claim your free credit welcome bonus."
 pubDate: 2026-01-12
-image: "/assets/homepage/game-cat1-2.png"
+image: "/assets/blog/jdl688-login-register-guide.jpg"
 category: "Guide"
 tags: ["login", "register", "free credit", "online casino singapore"]
 keywords: ["JDL688 login", "JDL688 register", "JDL688 free credit", "JDL688 Singapore", "online casino Singapore"]

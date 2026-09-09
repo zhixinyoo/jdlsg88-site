@@ -2,7 +2,7 @@
 title: "JDL688 Singapore Mobile App Download Guide — Android & iOS"
 description: "How to download and install the JDL688 Singapore app for Android and iOS, plus the Pussy888, Mega888, 918Kiss and Joker platforms it supports."
 pubDate: 2026-05-22
-image: "/assets/homepage/app-pussy888.png"
+image: "/assets/blog/jdl688-mobile-app-download-guide.jpg"
 category: "Guide"
 tags: ["mobile app", "download", "android", "ios"]
 keywords: ["JDL688 app", "JDL688 download", "JDL688 Singapore", "online casino Singapore app", "JDL688 login"]

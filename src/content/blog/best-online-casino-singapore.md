@@ -2,7 +2,7 @@
 title: "Best Online Casino Singapore — Why Players Choose JDL688"
 description: "A full look at why JDL688 Singapore ranks among the best online casino Singapore options, covering games, bonuses, payments and licensing."
 pubDate: 2026-08-18
-image: "/assets/homepage/banner-1.png"
+image: "/assets/blog/best-online-casino-singapore.jpg"
 category: "Reviews"
 tags: ["review", "online casino singapore", "trusted casino"]
 keywords: ["best online casino Singapore", "trusted online casino Singapore", "JDL688 Singapore", "online casino Singapore", "JDL688 review"]

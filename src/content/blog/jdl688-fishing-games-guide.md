@@ -2,7 +2,7 @@
 title: "JDL688 Singapore Fishing Games Guide — Ocean King, Mega Fishing & More"
 description: "A player's guide to the Fishing category at JDL688 Singapore, covering Ocean King Jackpot, Mega Fishing, Dragon Fortune and strategy tips."
 pubDate: 2026-03-15
-image: "/assets/homepage/game-cat2-3.png"
+image: "/assets/blog/jdl688-fishing-games-guide.jpg"
 category: "Guide"
 tags: ["fishing games", "strategy", "guide"]
 keywords: ["JDL688 fishing", "JDL688 Singapore", "online casino Singapore fishing games", "JDL688 slots", "Ocean King"]

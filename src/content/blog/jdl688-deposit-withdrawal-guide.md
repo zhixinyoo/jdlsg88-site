@@ -2,7 +2,7 @@
 title: "JDL688 Singapore Deposit & Withdrawal Guide — SGD Payment Methods Explained"
 description: "How to deposit and withdraw at JDL688 Singapore using Touch 'n Go, GrabPay, DuitNow and crypto, plus expected payout speed."
 pubDate: 2026-07-04
-image: "/assets/homepage/game-cat2-5.png"
+image: "/assets/blog/jdl688-deposit-withdrawal-guide.jpg"
 category: "Guide"
 tags: ["deposit", "withdrawal", "payments", "sgd"]
 keywords: ["JDL688 withdrawal", "JDL688 deposit", "JDL688 Singapore", "online casino Singapore payments", "JDL688 login"]
