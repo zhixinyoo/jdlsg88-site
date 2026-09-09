@@ -3,7 +3,7 @@ title: "Bingo & Arcade Games at JDL688 Singapore"
 description: "Play Journey West, Jogo do Bicho, Elf Bingo and Jackpot Bingo at JDL688 Singapore."
 metaDescription: "Bingo & Arcade games at JDL688 Singapore — Journey West, Elf Bingo, Jackpot Bingo. Join now and claim your welcome bonus."
 icon: "/assets/homepage/game-cat3-1.png"
-image: "/assets/homepage/banner-1.png"
+image: "/assets/homepage/category-bingo-arcade.jpg"
 order: 3
 draft: false
 ctaLabel: "Play Bingo & Arcade"

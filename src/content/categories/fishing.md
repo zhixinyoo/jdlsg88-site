@@ -3,7 +3,7 @@ title: "Fishing Games at JDL688 Singapore"
 description: "Play Ocean King Jackpot, Mega Fishing, Dragon Fortune and 9 more Fishing titles at JDL688 Singapore."
 metaDescription: "Fishing games at JDL688 Singapore — Ocean King Jackpot, Mega Fishing, Dragon Fortune. Join now and claim your welcome bonus."
 icon: "/assets/homepage/game-cat2-1.png"
-image: "/assets/homepage/banner-1.png"
+image: "/assets/homepage/category-fishing.jpg"
 order: 2
 draft: false
 ctaLabel: "Play Fishing Games"

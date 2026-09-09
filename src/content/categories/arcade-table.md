@@ -3,7 +3,7 @@ title: "Arcade & Table Games at JDL688 Singapore"
 description: "Play Justice Bao, Monkey King, Sic Bo, Roulette 36 Synchronize and more Arcade & Table games at JDL688 Singapore."
 metaDescription: "Arcade & Table games at JDL688 Singapore — Sic Bo, Roulette, Justice Bao and Monkey King. Join now and claim your welcome bonus."
 icon: "/assets/homepage/game-cat1-1.png"
-image: "/assets/homepage/banner-1.png"
+image: "/assets/homepage/category-arcade-table.jpg"
 order: 1
 draft: false
 ctaLabel: "Play Arcade & Table"

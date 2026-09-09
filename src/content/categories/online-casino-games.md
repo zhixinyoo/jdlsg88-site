@@ -3,7 +3,7 @@ title: "Online Casino Games at JDL688 Singapore"
 description: "Browse all 22+ Online Casino Games at JDL688 Singapore — Arcade & Table, Fishing, and Bingo & Arcade titles in one lobby."
 metaDescription: "Online Casino Games at JDL688 Singapore — the full games lobby in one place. Slots, fishing, table games and bingo. Join now and claim your welcome bonus."
 icon: "/assets/homepage/game-cat1-5.png"
-image: "/assets/homepage/banner-1.png"
+image: "/assets/homepage/category-online-casino-games.jpg"
 order: 0
 draft: false
 ctaLabel: "Play Online Casino Games"
