@@ -48,14 +48,6 @@ export const siteConfig = {
 
     banners: ["/assets/homepage/banner-1.png"],
 
-    blogImages: [
-      "/assets/blog/blog-1.jpg",
-      "/assets/blog/blog-2.jpg",
-      "/assets/blog/blog-3.png",
-      "/assets/blog/blog-4.png",
-      "/assets/blog/blog-5.png",
-    ],
-
     tabs: [
       {
         label: "Online Casino Games",

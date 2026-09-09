@@ -2,7 +2,7 @@
 title: "JDL688 Singapore Slot & Table Games Review — What's Worth Playing"
 description: "An honest look at the Arcade & Table lineup at JDL688 Singapore, including Sic Bo, Roulette 36 and more from Sky3888 and JILI."
 pubDate: 2026-02-20
-image: "/assets/blog/blog-3.png"
+image: "/assets/homepage/game-cat1-1.png"
 category: "Reviews"
 tags: ["slots", "table games", "review", "arcade"]
 keywords: ["JDL688 slots", "JDL688 review", "JDL688 Singapore", "online casino Singapore slots", "JDL688 arcade games"]

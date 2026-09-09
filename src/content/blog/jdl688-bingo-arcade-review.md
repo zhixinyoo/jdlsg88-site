@@ -2,7 +2,7 @@
 title: "JDL688 Singapore Bingo & Arcade Review — Journey West, Elf Bingo & More"
 description: "A breakdown of the Bingo & Arcade tab at JDL688 Singapore, covering Journey West, Elf Bingo, Jackpot Bingo and Jogo do Bicho."
 pubDate: 2026-04-09
-image: "/assets/blog/blog-5.png"
+image: "/assets/homepage/game-cat3-1.png"
 category: "Reviews"
 tags: ["bingo", "arcade", "review"]
 keywords: ["JDL688 bingo", "JDL688 arcade", "JDL688 Singapore", "online casino Singapore bingo games"]

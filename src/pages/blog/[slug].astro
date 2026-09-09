@@ -33,6 +33,7 @@ const padded = related.length >= 3
 
     {image && (
       <div class="post-hero">
+        <div class="post-hero-bg" style={`background-image: url(${image})`}></div>
         <img src={image} alt={title} class="post-hero-img" />
         <div class="post-hero-overlay">
           <a href={`/blog/category/${category.toLowerCase().trim().replace(/\s+/g, '-')}/`} class="post-category">{category}</a>
@@ -102,8 +103,12 @@ const padded = related.length >= 3
 <style is:global>
 .post-layout { max-width: 1100px; margin: 0 auto; padding: var(--gap); padding-bottom: 80px; }
 
-.post-hero { position: relative; border-radius: var(--radius); overflow: hidden; margin-bottom: 32px; border: 1px solid var(--line); box-shadow: var(--shadow-lift); }
-.post-hero-img { width: 100%; max-height: 420px; object-fit: cover; display: block; }
+.post-hero { position: relative; height: 340px; border-radius: var(--radius); overflow: hidden; margin-bottom: 32px; border: 1px solid var(--line); box-shadow: var(--shadow-lift); }
+.post-hero-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  filter: blur(28px) brightness(.5) saturate(1.3); transform: scale(1.15);
+}
+.post-hero-img { position: relative; width: 100%; height: 100%; object-fit: contain; display: block; }
 .post-hero-overlay {
   position: absolute; bottom: 0; left: 0; right: 0; padding: 24px;
   background: linear-gradient(transparent, rgba(0,0,0,.85));
