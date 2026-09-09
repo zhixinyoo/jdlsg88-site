@@ -13,6 +13,19 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const { title, description, pubDate, image, category, ctaLabel, relatedPosts = [] } = post.data;
 
+// Build FAQPage schema from the <details><summary>Q</summary>A</details> blocks
+// already in the post body, so posts with an FAQ section get FAQ rich-result eligibility.
+const faqPairs = [...post.body.matchAll(/<details>\s*<summary>(.+?)<\/summary>\s*([\s\S]+?)\s*<\/details>/g)];
+const faqSchema = faqPairs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqPairs.map(([, q, a]) => ({
+    "@type": "Question",
+    "name": q.trim(),
+    "acceptedAnswer": { "@type": "Answer", "text": a.trim() },
+  })),
+} : undefined;
+
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const related = allPosts
   .filter(p => relatedPosts.includes(p.id) && p.id !== post.id)
@@ -28,7 +41,7 @@ const padded = related.length >= 3
     ].slice(0, 5);
 ---
 
-<Layout title={title} description={description} ogImage={image}>
+<Layout title={title} description={description} ogImage={image} schema={faqSchema}>
   <article class="post-layout">
 
     {image && (

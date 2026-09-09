@@ -50,11 +50,14 @@ Nine further titles round out the tab, each with its own boss mechanics and payo
 
 ## Frequently Asked Questions
 
-**Is Fishing available 24/7 at JDL688 Singapore?**
+<details><summary>Is Fishing available 24/7 at JDL688 Singapore?</summary>
 Yes — all twelve tables run continuously, 24 hours a day.
+</details>
 
-**How does the Fortune King Jackpot progressive work?**
+<details><summary>How does the Fortune King Jackpot progressive work?</summary>
 It's a shared pool funded by a portion of tickets across the table, paying out to whichever player lands the qualifying hit.
+</details>
 
-**Can I use welcome bonus credit on fishing games?**
+<details><summary>Can I use welcome bonus credit on fishing games?</summary>
 Yes, bonus credit and the daily rebate both apply to fishing turnover under standard wagering terms.
+</details>

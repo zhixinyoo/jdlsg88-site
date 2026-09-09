@@ -40,11 +40,14 @@ This is the full JDL688 Singapore games lobby in one place — every title from 
 
 ## Frequently Asked Questions
 
-**Is the Online Casino Games lobby available 24/7 at JDL688 Singapore?**
+<details><summary>Is the Online Casino Games lobby available 24/7 at JDL688 Singapore?</summary>
 Yes — every title across every category runs continuously, 24 hours a day.
+</details>
 
-**Do I need a separate account for each game category?**
+<details><summary>Do I need a separate account for each game category?</summary>
 No — one JDL688 Singapore account covers the entire lobby across all categories.
+</details>
 
-**Can I use welcome bonus credit on any game in this lobby?**
+<details><summary>Can I use welcome bonus credit on any game in this lobby?</summary>
 Yes, welcome bonus and daily rebate credit generally apply across the full lobby — see the promotions page for current wagering terms.
+</details>

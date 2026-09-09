@@ -50,11 +50,14 @@ Raises the ceiling with a progressive jackpot funded by a portion of every ticke
 
 ## Frequently Asked Questions
 
-**Is Bingo & Arcade available 24/7 at JDL688 Singapore?**
+<details><summary>Is Bingo & Arcade available 24/7 at JDL688 Singapore?</summary>
 Yes — all four titles run continuously, 24 hours a day.
+</details>
 
-**How is the Jackpot Bingo prize funded?**
+<details><summary>How is the Jackpot Bingo prize funded?</summary>
 By a portion of every ticket purchased across the category, which is why it can grow quickly during busy periods.
+</details>
 
-**Can I use welcome bonus credit on this category?**
+<details><summary>Can I use welcome bonus credit on this category?</summary>
 Yes, welcome bonus and daily rebate credit generally apply here too — check the promotions page for current terms.
+</details>

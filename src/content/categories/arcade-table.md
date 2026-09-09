@@ -60,11 +60,14 @@ A long-running regional favourite with a traditional paytable that rewards stead
 
 ## Frequently Asked Questions
 
-**Is Arcade & Table available 24/7 at JDL688 Singapore?**
+<details><summary>Is Arcade & Table available 24/7 at JDL688 Singapore?</summary>
 Yes — every title in this tab runs continuously, 24 hours a day.
+</details>
 
-**What is the minimum bet for Sic Bo?**
+<details><summary>What is the minimum bet for Sic Bo?</summary>
 Minimum bets are set per table and displayed before you confirm a wager — check the in-game betting panel for current limits.
+</details>
 
-**Can I use welcome bonus credit on these games?**
+<details><summary>Can I use welcome bonus credit on these games?</summary>
 Yes, welcome bonus and daily rebate credit generally apply across this category — see the promotions page for current wagering terms.
+</details>
